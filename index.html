@@ -202,11 +202,20 @@
     line-height: 1.6;
   }
 }
+.form-icon {
+  color: #888;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
 
+.form-icon:hover {
+  color: #0078d4;
+}
 
 
   </style>
 </head>
+
 
 <body ng-controller="NotebookListCtrl">
   <div id="notebooks">
@@ -242,14 +251,23 @@
         <li ng-repeat="notebook in notebooks | filter:query | orderBy: orderList">
           <div class="title-row">
             <strong>{{notebook.name}}</strong>
-            <span class="code">{{notebook.age}}</span>
+        
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="code">{{notebook.age}}</span>
+              <a 
+                ng-href="{{notebook.url}}" 
+                target="_blank" 
+                class="form-icon" 
+                title="Ver página do produto">
+                <i class="fas fa-file-alt"></i>
+              </a>
+            </div>
           </div>
           <p>{{notebook.procesor}}</p>
         </li>
+     
       </ul>
     </div>
-    
-
 
   <script>
     var notebooks = angular.module('notebooks', []);
@@ -259,129 +277,150 @@
         {
           name: "BPO Contábil e Tributário - Transportes",
           procesor: "Organiza e registra todas as movimentações financeiras e fiscais da empresa de forma correta e dentro da lei. Monta relatórios como DRE, balancete e balanço anual, entrega as obrigações exigidas pelo governo (ECD e ECF), acompanha os resultados e apresenta indicadores para ajudar na tomada de decisões. Garante economia com estrutura interna, reduz riscos tributários e apoia a gestão com informações seguras e úteis.",
-          age: "OCT014"
+          age: "OCT014",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/BPO-Cont%C3%A1bil-e-Tribut%C3%A1rio---Transportes.aspx"
         },
         {
           name: "BPO Contábil e Tributário – Indústria e Comércio",
           procesor: "Cuida de toda a contabilidade e das obrigações fiscais da empresa, garantindo que tudo esteja correto, dentro da lei e entregue no prazo. Registra movimentações, elabora relatórios financeiros claros e úteis (como balancetes, DRE e balanço anual), envia as declarações obrigatórias e acompanha os resultados de perto. Ajuda a reduzir riscos, economizar com estrutura interna e oferece informações seguras para apoiar decisões e o crescimento da empresa.",
-          age: "OCT015"
+          age: "OCT015",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/BPO-Cont%C3%A1bil-e-Tribut%C3%A1rio-%E2%80%93-Ind%C3%BAstria-e-Com%C3%A9rcio.aspx"
         },
         {
           name: "BPO Trabalhista e Previdenciário",
-          procesor: "Assume toda a parte burocrática do departamento pessoal, como registros de empregados, folha de pagamento, pró-labore, guias de encargos e envio das obrigações legais (eSocial, DCTFWeb, DIRF). Oferece um time especializado que garante o cumprimento da legislação trabalhista e previdenciária, reduz erros, evita multas e permite que a equipe interna foque no que realmente importa: a gestão estratégica do negócio.",
-          age: "OCT013"
+          procesor: " É um serviço completo de terceirização da gestão trabalhista e previdenciária, garantindo que a empresa cumpra todas as obrigações legais e otimize sua gestão de folha de pagamento, benefícios e rotinas de recursos humanos. O serviço é adaptado para empresas de todos os portes e setores, garantindo conformidade e eficiência.",
+          age: "OCT013",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/BPO-Trabalhista-e-Previdenci%C3%A1rio.aspx"
         },
 
         {
           name: "BPO Trabalhista e Previdenciário – Por Vida",
           procesor: "Cuida de toda a parte trabalhista e previdenciária de colaboradores contratados pela empresa, de forma individualizada. Inclui registros, folha de pagamento, encargos, envio de obrigações legais (eSocial, DCTFWeb, DIRF) e suporte técnico com base na legislação vigente. Evita erros, reduz riscos de multas e permite que o cliente não precise se envolver nas rotinas burocráticas, mantendo o foco total no seu negócio.",
-          age: "OCT013-01"
+          age: "OCT013-01",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/BPO-Trabalhista-e-Previdenci%C3%A1rio-%E2%80%93-Por-Vida.aspx"
         },
 
         {
           name: "Regularização de Obra",
           procesor: "Realiza todo o processo de regularização da obra junto aos órgãos competentes, incluindo abertura do CNO, apuração de encargos, envio das obrigações legais, regularização no SERO e emissão da certidão negativa para averbação do imóvel. Garante que a obra esteja em conformidade com a legislação, evitando autuações, atrasos no registro e prejuízos com encargos apurados de forma incorreta.",
           age: "OCT006-01",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Regulariza%C3%A7%C3%A3o-de-Obra.aspx"
         },
 
         {
           name: "Obrigação Acessória e-Social Processo Trabalhista",
           procesor: "Realiza o registro do processo trabalhista no e-Social, com lançamento dos valores devidos, envio das informações, transmissão da DCTFWeb e emissão da guia de recolhimento. Garante o cumprimento da exigência legal com apuração correta dos encargos e documentação adequada para apresentação à Justiça do Trabalho, evitando riscos e pendências com o Fisco.",
           age: "OCT018",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Obriga%C3%A7%C3%A3o-Acess%C3%B3ria-e-Social-Processo-Trabalhista.aspx"
         },
 
         {
           name: "Consultoria e Assessoria Contábil / Tributária",
           procesor: "Auxilia a empresa na organização dos processos contábeis e fiscais, com mapeamento de rotinas, orientação da equipe, definição de agendas de fechamento e apoio na apuração de tributos e entrega de obrigações acessórias. Garante que os procedimentos estejam alinhados à legislação, melhora o controle interno e contribui para decisões mais seguras, com foco em crescimento, redução de riscos e continuidade operacional.",
           age: "OCT011",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Consultoria-e-Assessoria-Cont%C3%A1bil---Tribut%C3%A1ria.aspx"
         },
 
         {
           name: "Parametrização Contábil/Tributária – Sistema Operacional",
           procesor: "Configura corretamente o sistema de gestão da empresa para refletir as regras contábeis e tributárias, garantindo que todos os lançamentos, cálculos e classificações sejam feitos de forma automatizada, segura e em conformidade com a legislação. Reduz o tempo da equipe com retrabalho, evita erros fiscais, melhora a qualidade das informações e agiliza os processos internos, contribuindo para uma gestão mais eficiente e estratégica.",
-          age: "OCT019"
+          age: "OCT019",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Parametriza%C3%A7%C3%A3o-Cont%C3%A1bil-Tribut%C3%A1ria-%E2%80%93-Sistema-Operacional.aspx"
         },
 
         {
           name: " IRPF – Anual",
           procesor: "Realiza o preenchimento, revisão e entrega da declaração do Imposto de Renda Pessoa Física (IRPF), com acompanhamento de todas as fichas e consultoria patrimonial. Garante o cumprimento da obrigação legal, evita multas e bloqueios no CPF, e assegura que os dados estejam corretos e otimizados para reduzir riscos fiscais e apoiar o planejamento financeiro do contribuinte.",
-          age: "OCT009-01"
+          age: "OCT009-01",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/IRPF-%E2%80%93-Anual.aspx"
         },
 
         {
           name: "IRPF – Mensal",
           procesor: "Realiza o lançamento mensal de receitas e despesas no livro-caixa do contribuinte (Carnê-Leão, atividade rural, renda variável), com acompanhamento patrimonial contínuo. Garante o cumprimento das obrigações mensais exigidas pela Receita Federal, evita multas e bloqueios no CPF e permite identificar oportunidades de economia tributária com antecedência, apoiando o planejamento financeiro e patrimonial.",
-          age: "OCT009-02"
+          age: "OCT009-02",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/IRPF-%E2%80%93-Mensal.aspx"
         },
 
         
         {
           name: "Planejamento Tributário – Executado pela Contabilidade (Clientes Base)",
           procesor: "Analisa se a empresa está no regime fiscal mais vantajoso, com foco na redução da carga tributária e na utilização correta de benefícios fiscais federais e estaduais. A análise considera a atividade da empresa, a tributação dos produtos (por NCM), os estados de atuação, a viabilidade de filiais e o compliance tributário. Em situações específicas — como clientes já atendidos pela Contabilidade e diante da indisponibilidade técnica da equipe de Gestão Tributária — a execução poderá ser realizada pela área contábil, mantendo o padrão técnico e os objetivos estratégicos do serviço.",
-          age: "OCT020"
+          age: "OCT020",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Planejamento-Tribut%C3%A1rio-%E2%80%93-Executado-pela-Contabilidade-(Clientes-Base).aspx"
         },
 
         {
           name: "Revisão de Grade – Executado pela Contabilidade (Clientes Base)",
-          procesor: "Valida a correta aplicação da tributação sobre os produtos da empresa, com foco na conformidade legal e na identificação de oportunidades de economia fiscal. Inclui o diagnóstico da operação, análise das alíquotas de ICMS, ICMS-ST, PIS e COFINS (compra e venda), levantamento de benefícios fiscais aplicáveis e emissão de parecer com projeções de redução de carga ou passivos. Em casos específicos — como clientes já atendidos pela Contabilidade e com indisponibilidade técnica da Gestão Tributária — a execução pode ser feita pela equipe contábil, mantendo o padrão técnico do serviço.",
-          age: "OCT021"
+          procesor: "A Revisão de Grade Tributária é um serviço especializado que garante que sua empresa aplique corretamente a tributação sobre seus produtos e serviços, assegurando conformidade legal e identificando oportunidades de economia fiscal. Este serviço é realizado exclusivamente pela equipe contábil para clientes internos já atendidos pela Contabilidade, ou em situações em que a Gestão Tributária não tenha disponibilidade técnica para atender a demanda. Dessa forma, garantimos que mesmo os clientes da Contabilidade tenham acesso à revisão técnica da grade tributária, mantendo o padrão de qualidade da análise.",
+          age: "OCT021",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Revis%C3%A3o-de-Grade-%E2%80%93-Executado-pela-Contabilidade-(Clientes-Base).aspx"
         },
 
         {
           name: "Análise e Acompanhamento de Parcelamentos Federais, Estaduais e Municipais",
           procesor: "Identifica oportunidades para regularização de débitos tributários junto aos órgãos federais, estaduais e municipais, avaliando condições de parcelamento e possíveis reduções de multas e juros. Realiza a adesão aos programas disponíveis e acompanha a manutenção dos parcelamentos, garantindo a conformidade fiscal da empresa, a continuidade das operações e a redução de riscos financeiros.",
-          age: "OCT022"
+          age: "OCT022",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/An%C3%A1lise-e-Acompanhamento-de-Parcelamentos-Federais,-Estaduais-e-Municipais.aspx"
         },
 
         {
           name: "Assessoria para Filiais",
           procesor: "Oferece suporte contábil, fiscal e operacional para a abertura, estruturação e rotina das filiais da empresa, garantindo que todas as obrigações sejam cumpridas conforme a legislação local. Auxilia na padronização de processos, apuração correta de tributos e integração das informações com a matriz, assegurando controle, conformidade e eficiência na expansão das operações.",
-          age: "OCT001"
+          age: "OCT001",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Assessoria-para-Filiais.aspx"
         },
 
 
         {
           name: "Constituição e Regularização de Empresas",
           procesor: "Realiza todo o processo de abertura e legalização de empresas, incluindo cadastro no CNPJ, registro na Junta Comercial, obtenção de inscrições fiscais e alvarás, além da regularização de pendências cadastrais e fiscais. Garante que a empresa esteja formalizada e pronta para operar com segurança jurídica, evitando riscos legais e facilitando o acesso a benefícios fiscais e crédito.",
-          age: "OCT006"
+          age: "OCT006",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Constitui%C3%A7%C3%A3o-e-Regulariza%C3%A7%C3%A3o-de-Empresas.aspx"
         },
 
         {
           name: "Recomposição Contábil e Tributária",
           procesor: "Regulariza e atualiza registros contábeis e fiscais de períodos anteriores, corrigindo inconsistências, refazendo lançamentos e entregando obrigações acessórias em atraso. Garante que a empresa volte à conformidade legal, evita multas e autuações, e assegura a integridade das informações para tomadas de decisão e auditorias futuras.",
-          age: "OCT017"
+          age: "OCT017",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Recomposi%C3%A7%C3%A3o-Cont%C3%A1bil-e-Tribut%C3%A1ria.aspx"
         },
 
         {
           name: "IRPF / ITR",
           procesor: "Realiza o preenchimento, revisão e entrega da declaração de Imposto de Renda Pessoa Física (IRPF) e do Imposto Territorial Rural (ITR), garantindo o cumprimento das obrigações legais, a correta apuração dos tributos e a regularidade do CPF e do imóvel rural. Evita multas, bloqueios e inconsistências, assegurando tranquilidade fiscal e suporte ao planejamento patrimonial.",
-          age: "OCT009"
+          age: "OCT009",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/IRPF---ITR.aspx"
         },
 
         {
           name: "BPO Contábil e Tributário – Serviços",
           procesor: "Cuida de toda a rotina contábil e fiscal da empresa prestadora de serviços, com registros das movimentações, elaboração de demonstrativos financeiros, entrega das obrigações exigidas pelo Fisco (ECD, ECF, DCTF etc.) e reuniões de acompanhamento. Garante que a empresa atenda às exigências legais, evite riscos com tributos mal calculados e tenha informações confiáveis para apoiar decisões e crescimento com segurança.",
-          age: "OCT016"
+          age: "OCT016",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/BPO-Cont%C3%A1bil-e-Tribut%C3%A1rio-%E2%80%93-Servi%C3%A7os.aspx"
         },
 
 
         {
           name: "Implantação Contábil Tributário (CT)",
           procesor: "Etapa inicial antes do início da contabilidade recorrente, realizada para alinhar processos, escopo, obrigações e estrutura fiscal e contábil do cliente. Inclui o mapeamento da operação atual, análise da contabilidade anterior, revisão de cadastros, parametrização do sistema e definição dos fluxos de trabalho. Garante uma transição segura, reduz riscos operacionais e assegura que a contabilidade comece estruturada e alinhada com as necessidades do negócio.",
-          age: "OCT026"
+          age: "OCT026",
+             url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Implanta%C3%A7%C3%A3o-Cont%C3%A1bil-Tribut%C3%A1rio-(CT).aspx"
         },
 
         {
           name: "Implantação Trabalhista/Previdenciária (TP)",
           procesor: "Etapa preparatória antes do início da rotina trabalhista e previdenciária, voltada à organização e estruturação das informações dos colaboradores e obrigações legais. Envolve o levantamento e validação de dados da folha anterior, parametrização do sistema, revisão de eventos no eSocial e definição dos fluxos de admissão, férias, rescisões e encargos. Garante uma transição segura, evitando inconsistências e assegurando o correto cumprimento das obrigações desde o primeiro mês",
-          age: "OCT027"
+          age: "OCT027",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Implanta%C3%A7%C3%A3o-Trabalhista-Previdenci%C3%A1ria-(TP).aspx"
         },
 
         
         {
           name: "Pedido de Regime Especial",
           procesor: "Realiza o levantamento de documentos, elaboração de cálculos e protocolo do pedido de Regime Especial de tributação junto ao Fisco. Inclui o acompanhamento do processo até a decisão final do órgão competente, garantindo o cumprimento das exigências formais. Não contempla análise estratégica da viabilidade nem defesa técnica do pleito.",
-          age: "OCT025"
+          age: "OCT025",
+          url:"https://funcionalx.sharepoint.com/sites/produtos/SitePages/Produtos%20CONT/Pedido-de-Regime-Especial.aspx"
         }
         
       ];
